@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddClassesController.swift
 //  myGPA
 //
 //  Created by Tarlan Ismayilsoy on 1/9/19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddClassesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
-
-
+    
+    func initClassesVC(semester: Semester){
+        navigationItem.title = semester.name
+    }
 }
-

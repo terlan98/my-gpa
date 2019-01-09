@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654663BC21E6315A00C082B7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BB21E6315A00C082B7 /* Semester.swift */; };
+		654663BE21E6323E00C082B7 /* AddClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BD21E6323E00C082B7 /* AddClassesController.swift */; };
+		65C8BD9921E6446300E8B897 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8BD9821E6446300E8B897 /* DataService.swift */; };
+		65D5DB2321E628DF00707E90 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5DB2221E628DF00707E90 /* FooterView.swift */; };
 		65DF3A6A21E5F97800392B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF3A6921E5F97800392B77 /* AppDelegate.swift */; };
-		65DF3A6C21E5F97800392B77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF3A6B21E5F97800392B77 /* ViewController.swift */; };
+		65DF3A6C21E5F97800392B77 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF3A6B21E5F97800392B77 /* MainVC.swift */; };
 		65DF3A6F21E5F97800392B77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DF3A6D21E5F97800392B77 /* Main.storyboard */; };
 		65DF3A7121E5F97A00392B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DF3A7021E5F97A00392B77 /* Assets.xcassets */; };
 		65DF3A7421E5F97A00392B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DF3A7221E5F97A00392B77 /* LaunchScreen.storyboard */; };
+		65DF3A7F21E609F200392B77 /* SemesterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF3A7E21E609F200392B77 /* SemesterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		654663BB21E6315A00C082B7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
+		654663BD21E6323E00C082B7 /* AddClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassesController.swift; sourceTree = "<group>"; };
+		65C8BD9821E6446300E8B897 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		65D5DB2221E628DF00707E90 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		65DF3A6621E5F97800392B77 /* myGPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DF3A6921E5F97800392B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65DF3A6B21E5F97800392B77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65DF3A6B21E5F97800392B77 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		65DF3A6E21E5F97800392B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65DF3A7021E5F97A00392B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65DF3A7321E5F97A00392B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65DF3A7521E5F97A00392B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65DF3A7E21E609F200392B77 /* SemesterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65C8BD9721E6445300E8B897 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				65C8BD9821E6446300E8B897 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		65DF3A5D21E5F97800392B77 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +72,43 @@
 		65DF3A6821E5F97800392B77 /* myGPA */ = {
 			isa = PBXGroup;
 			children = (
+				65C8BD9721E6445300E8B897 /* Services */,
+				65DF3A7D21E6081400392B77 /* Model */,
+				65DF3A7C21E6080F00392B77 /* View */,
+				65DF3A7B21E6080400392B77 /* Controller */,
 				65DF3A6921E5F97800392B77 /* AppDelegate.swift */,
-				65DF3A6B21E5F97800392B77 /* ViewController.swift */,
 				65DF3A6D21E5F97800392B77 /* Main.storyboard */,
 				65DF3A7021E5F97A00392B77 /* Assets.xcassets */,
 				65DF3A7221E5F97A00392B77 /* LaunchScreen.storyboard */,
 				65DF3A7521E5F97A00392B77 /* Info.plist */,
 			);
 			path = myGPA;
+			sourceTree = "<group>";
+		};
+		65DF3A7B21E6080400392B77 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65DF3A6B21E5F97800392B77 /* MainVC.swift */,
+				654663BD21E6323E00C082B7 /* AddClassesController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		65DF3A7C21E6080F00392B77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65DF3A7E21E609F200392B77 /* SemesterCell.swift */,
+				65D5DB2221E628DF00707E90 /* FooterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65DF3A7D21E6081400392B77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				654663BB21E6315A00C082B7 /* Semester.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DF3A6C21E5F97800392B77 /* ViewController.swift in Sources */,
+				65DF3A6C21E5F97800392B77 /* MainVC.swift in Sources */,
+				65C8BD9921E6446300E8B897 /* DataService.swift in Sources */,
+				65D5DB2321E628DF00707E90 /* FooterView.swift in Sources */,
 				65DF3A6A21E5F97800392B77 /* AppDelegate.swift in Sources */,
+				654663BC21E6315A00C082B7 /* Semester.swift in Sources */,
+				654663BE21E6323E00C082B7 /* AddClassesController.swift in Sources */,
+				65DF3A7F21E609F200392B77 /* SemesterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
