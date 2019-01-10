@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="jlD-FB-GHF" customClass="FooterView" customModule="myGPA" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="148" width="375" height="117"/>
+                                    <rect key="frame" x="0.0" y="299" width="375" height="117"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M92-Qv-lGN">
@@ -91,6 +91,23 @@
                                             <outlet property="semesterName" destination="rS3-fM-Yh6" id="Uxb-R4-XOm"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="emptyCell" rowHeight="151" id="uWL-mH-UQ8" customClass="EmptyCell" customModule="myGPA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="375" height="151"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uWL-mH-UQ8" id="TwV-DH-PtK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click the + button below to add a new semester" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVy-sr-Zf4">
+                                                    <rect key="frame" x="63" y="49" width="248" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
@@ -117,7 +134,7 @@
         <!--Semester Name-->
         <scene sceneID="hyT-lG-zRv">
             <objects>
-                <viewController id="OBW-8S-jEe" customClass="AddClassesController" customModule="myGPA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OBW-8S-jEe" customClass="BrowseSemesterVC" customModule="myGPA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XaA-qT-MMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,21 +147,62 @@
             </objects>
             <point key="canvasLocation" x="1934" y="467"/>
         </scene>
-        <!--Add Semester-->
+        <!--New Semester:-->
         <scene sceneID="B0x-b8-Q2c">
             <objects>
-                <viewController id="RLv-EN-jzY" sceneMemberID="viewController">
+                <viewController id="RLv-EN-jzY" customClass="AddSemesterVC" customModule="myGPA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EB-dn-pZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Semester Name" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-Bl-hT4">
+                                <rect key="frame" x="16" y="126" width="195" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="995-GR-NCU">
+                                <rect key="frame" x="0.0" y="156" width="375" height="377"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="gne-EA-Qw9">
+                                    <size key="itemSize" width="164" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="15" maxX="16" maxY="15"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ClassCell" id="mH4-cR-44J">
+                                        <rect key="frame" x="16" y="15" width="164" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gOJ-pU-Ie7" firstAttribute="bottom" secondItem="995-GR-NCU" secondAttribute="bottom" constant="134" id="I56-ZM-tGw"/>
+                            <constraint firstItem="995-GR-NCU" firstAttribute="top" secondItem="MRN-Bl-hT4" secondAttribute="bottom" id="LRq-8L-UPF"/>
+                            <constraint firstItem="995-GR-NCU" firstAttribute="leading" secondItem="gOJ-pU-Ie7" secondAttribute="leading" id="SWL-kV-e0A"/>
+                            <constraint firstItem="MRN-Bl-hT4" firstAttribute="top" secondItem="gOJ-pU-Ie7" secondAttribute="top" constant="10" id="UV9-m9-PiF"/>
+                            <constraint firstItem="995-GR-NCU" firstAttribute="trailing" secondItem="gOJ-pU-Ie7" secondAttribute="trailing" id="XK2-8L-R7N"/>
+                            <constraint firstItem="MRN-Bl-hT4" firstAttribute="leading" secondItem="gOJ-pU-Ie7" secondAttribute="leading" constant="16" id="pzm-Pi-yDG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gOJ-pU-Ie7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Semester" id="02t-Ry-8kP"/>
+                    <navigationItem key="navigationItem" title="New Semester:" id="bMc-gQ-yMe"/>
+                    <connections>
+                        <outlet property="collectionView" destination="995-GR-NCU" id="faP-Aq-v6e"/>
+                        <outlet property="semesterNameLabel" destination="MRN-Bl-hT4" id="hRB-qZ-2Sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5m-aA-C77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="1154"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="1153.6731634182909"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OVU-93-nHh">

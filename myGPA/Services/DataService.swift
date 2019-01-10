@@ -12,9 +12,9 @@ class DataService
 {
     static let instance = DataService()
     
-//    private let semester = [Semester]()
+//    private var semester = [Semester]()
     
-    private let semester = [
+    private var semester = [
         Semester(name: "Spring 2018", gpa: 3.87),
         Semester(name: "Fall 2019", gpa: 3.58),
         Semester(name: "Summer 2018", gpa: 2.20)
@@ -23,5 +23,11 @@ class DataService
     func getSemesters() -> [Semester]
     {
         return semester
+//        return [Semester]()
+    }
+    
+    func addSemester(name: String, gpa: Double)
+    {
+        semester.append(Semester(name: name, gpa: gpa))
     }
 }

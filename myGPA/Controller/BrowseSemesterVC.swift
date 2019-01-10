@@ -8,11 +8,10 @@
 
 import UIKit
 
-class AddClassesController: UIViewController {
+class BrowseSemesterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     

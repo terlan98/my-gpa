@@ -22,17 +22,31 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.getSemesters().count
+        let semesterCount = DataService.instance.getSemesters().count
+        if semesterCount == 0 { return 1 }//If there are no semesters, create one row for the EmptyCell
+        return semesterCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SemesterCell
+        let semesterCount = DataService.instance.getSemesters().count
         
-        return cell
+        if semesterCount == 0 //If there are no semesters, show an EmptyCell with a message
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell") as! EmptyCell
+            
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SemesterCell
+        
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if DataService.instance.getSemesters().count == 0 {return}//If there are no semesters, do not perform a segue
+
         let currentCell = tableView.cellForRow(at: indexPath) as? SemesterCell
 
         tableView.deselectRow(at: indexPath, animated: false)//So that the cell does not remain selected after the segue
@@ -41,9 +55,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let cell = sender as? SemesterCell
         
-        if let addClassesVC = segue.destination as? AddClassesController{
+        if let addClassesVC = segue.destination as? BrowseSemesterVC{
             addClassesVC.initClassesVC(semester: DataService.instance.getSemesters()[(tableView.indexPath(for: cell!)?.row)!])
         }
     }
