@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+    ///Creates a gradient layer for a UIView by taking two UIColors as parameters.
     func setGradientBackgroundColor(colorOne: UIColor, colorTow: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds

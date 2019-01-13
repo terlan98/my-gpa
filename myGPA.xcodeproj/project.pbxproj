@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		654663BC21E6315A00C082B7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BB21E6315A00C082B7 /* Semester.swift */; };
 		654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */; };
+		655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EB52921EB6B3600FA33E4 /* Gradient.swift */; };
 		6599A93321E76A4B00EB9427 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599A93221E76A4B00EB9427 /* EmptyCell.swift */; };
 		6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599A93421E774E700EB9427 /* AddSemesterVC.swift */; };
 		65C8BD9921E6446300E8B897 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8BD9821E6446300E8B897 /* DataService.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		654663BB21E6315A00C082B7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSemesterVC.swift; sourceTree = "<group>"; };
+		655EB52921EB6B3600FA33E4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		6599A93221E76A4B00EB9427 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		6599A93421E774E700EB9427 /* AddSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSemesterVC.swift; sourceTree = "<group>"; };
 		65C8BD9821E6446300E8B897 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		655EB52B21EB6D2F00FA33E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				655EB52921EB6B3600FA33E4 /* Gradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		65C8BD9721E6445300E8B897 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		65DF3A6821E5F97800392B77 /* myGPA */ = {
 			isa = PBXGroup;
 			children = (
+				655EB52B21EB6D2F00FA33E4 /* Extensions */,
 				65C8BD9721E6445300E8B897 /* Services */,
 				65DF3A7D21E6081400392B77 /* Model */,
 				65DF3A7C21E6080F00392B77 /* View */,
@@ -193,6 +204,7 @@
 				6599A93321E76A4B00EB9427 /* EmptyCell.swift in Sources */,
 				65C8BD9921E6446300E8B897 /* DataService.swift in Sources */,
 				65D5DB2321E628DF00707E90 /* FooterView.swift in Sources */,
+				655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */,
 				65DF3A6A21E5F97800392B77 /* AppDelegate.swift in Sources */,
 				654663BC21E6315A00C082B7 /* Semester.swift in Sources */,
 				654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */,

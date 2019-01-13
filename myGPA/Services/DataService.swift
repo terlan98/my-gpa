@@ -17,7 +17,7 @@ class DataService
     private var semester = [
         Semester(name: "Spring 2018", gpa: 3.87),
         Semester(name: "Fall 2019", gpa: 3.58),
-        Semester(name: "Summer 2018", gpa: 2.20)
+        Semester(name: "Summer 2018", gpa: 1.83)
     ]
     
     func getSemesters() -> [Semester]

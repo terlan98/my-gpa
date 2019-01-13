@@ -39,6 +39,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SemesterCell
+            
+            cell.updateCell(semester: DataService.instance.getSemesters()[indexPath.row])
         
             return cell
         }
@@ -48,7 +50,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if DataService.instance.getSemesters().count == 0 {return}//If there are no semesters, do not perform a segue
 
         let currentCell = tableView.cellForRow(at: indexPath) as? SemesterCell
-
+        
         tableView.deselectRow(at: indexPath, animated: false)//So that the cell does not remain selected after the segue
         
         performSegue(withIdentifier: "AddClasses", sender: currentCell)
