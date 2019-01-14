@@ -12,9 +12,14 @@ struct Semester
 {
     private(set) public var name: String
     private(set) public var gpa: Double
+    private(set) public var courses: [String]
+    private(set) public var grades: [String]
     
-    init(name: String, gpa: Double) {
+    
+    init(name: String, gpa: Double, classes: [String], grades: [String]) {
         self.name = name
         self.gpa = gpa
+        self.courses = classes
+        self.grades = grades
     }
 }

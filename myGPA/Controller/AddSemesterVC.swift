@@ -23,11 +23,11 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCourseCell", for: indexPath)
         return cell
     }
     
@@ -40,17 +40,4 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-}
-
-//WRITE IT IN ANOTHER SWIFT FILE
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (dismissKeyboardView))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboardView() {
-        view.endEditing(true)
-    }
 }
