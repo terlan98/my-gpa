@@ -162,7 +162,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="995-GR-NCU">
-                                <rect key="frame" x="0.0" y="190.5" width="375" height="342.5"/>
+                                <rect key="frame" x="0.0" y="190.5" width="375" height="476.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="gne-EA-Qw9">
                                     <size key="itemSize" width="164" height="125"/>
@@ -240,7 +240,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="G8o-T1-Pr0" firstAttribute="leading" secondItem="gOJ-pU-Ie7" secondAttribute="leading" constant="16" id="1oJ-N9-XTT"/>
-                            <constraint firstItem="gOJ-pU-Ie7" firstAttribute="bottom" secondItem="995-GR-NCU" secondAttribute="bottom" constant="134" id="I56-ZM-tGw"/>
+                            <constraint firstItem="gOJ-pU-Ie7" firstAttribute="bottom" secondItem="995-GR-NCU" secondAttribute="bottom" id="I56-ZM-tGw"/>
                             <constraint firstItem="G8o-T1-Pr0" firstAttribute="top" secondItem="MRN-Bl-hT4" secondAttribute="bottom" constant="15" id="JLO-hQ-0Vm"/>
                             <constraint firstItem="995-GR-NCU" firstAttribute="leading" secondItem="gOJ-pU-Ie7" secondAttribute="leading" id="SWL-kV-e0A"/>
                             <constraint firstItem="MRN-Bl-hT4" firstAttribute="top" secondItem="gOJ-pU-Ie7" secondAttribute="top" constant="10" id="UV9-m9-PiF"/>
@@ -250,15 +250,94 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gOJ-pU-Ie7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Semester" id="bMc-gQ-yMe"/>
+                    <navigationItem key="navigationItem" title="New Semester" id="bMc-gQ-yMe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sjc-hW-OZV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="995-GR-NCU" id="faP-Aq-v6e"/>
                         <outlet property="semesterNameLabel" destination="MRN-Bl-hT4" id="hRB-qZ-2Sp"/>
+                        <segue destination="hHy-eH-elt" kind="presentation" identifier="AddCourseVC" modalTransitionStyle="crossDissolve" id="129-ga-775"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5m-aA-C77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1933.5999999999999" y="1153.6731634182909"/>
+        </scene>
+        <!--Add CourseVC-->
+        <scene sceneID="N28-iG-FDY">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="hHy-eH-elt" customClass="AddCourseVC" customModule="myGPA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hCh-cD-c0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0l9-aU-AHN">
+                                <rect key="frame" x="47.5" y="153.5" width="280" height="280"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COURSE GRADE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTK-7f-LRt">
+                                        <rect key="frame" x="8" y="80" width="264" height="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kB5-bz-RBs">
+                                        <rect key="frame" x="16" y="32" width="248" height="23"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e16-fd-ZLW">
+                                        <rect key="frame" x="0.0" y="243" width="280" height="37"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                        <state key="normal" title="SAVE">
+                                            <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="hHy-eH-elt" eventType="touchUpInside" id="xvd-7G-mnS"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-dE-XB9">
+                                        <rect key="frame" x="16" y="97" width="248" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="136" id="4RX-HA-vgT"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="e16-fd-ZLW" firstAttribute="leading" secondItem="0l9-aU-AHN" secondAttribute="leading" id="4Pg-s7-kmT"/>
+                                    <constraint firstItem="kB5-bz-RBs" firstAttribute="leading" secondItem="0l9-aU-AHN" secondAttribute="leading" constant="16" id="DNh-fG-Owq"/>
+                                    <constraint firstItem="WkD-dE-XB9" firstAttribute="leading" secondItem="0l9-aU-AHN" secondAttribute="leading" constant="16" id="Ddx-pV-1E9"/>
+                                    <constraint firstAttribute="bottom" secondItem="e16-fd-ZLW" secondAttribute="bottom" id="FFm-M2-czM"/>
+                                    <constraint firstItem="WkD-dE-XB9" firstAttribute="top" secondItem="fTK-7f-LRt" secondAttribute="bottom" id="KGy-vm-Vdo"/>
+                                    <constraint firstAttribute="height" constant="280" id="KND-HT-PEt"/>
+                                    <constraint firstAttribute="trailing" secondItem="kB5-bz-RBs" secondAttribute="trailing" constant="16" id="Mlr-OL-vfH"/>
+                                    <constraint firstAttribute="trailing" secondItem="e16-fd-ZLW" secondAttribute="trailing" id="UFO-Gg-03Y"/>
+                                    <constraint firstItem="fTK-7f-LRt" firstAttribute="top" secondItem="kB5-bz-RBs" secondAttribute="bottom" constant="25" id="Zho-Nl-fFX"/>
+                                    <constraint firstItem="fTK-7f-LRt" firstAttribute="leading" secondItem="0l9-aU-AHN" secondAttribute="leading" constant="8" id="aTx-Ar-DUN"/>
+                                    <constraint firstAttribute="trailing" secondItem="fTK-7f-LRt" secondAttribute="trailing" constant="8" id="hca-a5-yH1"/>
+                                    <constraint firstAttribute="width" constant="280" id="qMW-5a-6Hi"/>
+                                    <constraint firstItem="kB5-bz-RBs" firstAttribute="top" secondItem="0l9-aU-AHN" secondAttribute="top" constant="32" id="vq3-xR-1Fu"/>
+                                    <constraint firstAttribute="trailing" secondItem="WkD-dE-XB9" secondAttribute="trailing" constant="16" id="wvA-iJ-1nx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.35129494863013699" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0l9-aU-AHN" firstAttribute="centerY" secondItem="hCh-cD-c0H" secondAttribute="centerY" constant="-40" id="5E6-pW-opc"/>
+                            <constraint firstItem="0l9-aU-AHN" firstAttribute="centerX" secondItem="hCh-cD-c0H" secondAttribute="centerX" id="XQA-Cb-3cP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b52-SK-l7S"/>
+                    </view>
+                    <connections>
+                        <outlet property="courseNameTextField" destination="kB5-bz-RBs" id="MwT-h9-cJ0"/>
+                        <outlet property="gradePickerView" destination="WkD-dE-XB9" id="1Al-GL-D4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="niU-ro-b5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="1154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OVU-93-nHh">

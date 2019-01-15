@@ -16,7 +16,7 @@ class DataService
     
     private var semester = [
         Semester(name: "Spring 2018", gpa: 3.87, classes: ["Calculus"], grades: ["A"]),
-        Semester(name: "Fall 2019", gpa: 3.58, classes: ["History"], grades: ["B+"]),
+        Semester(name: "Fall 2019", gpa: 2.58, classes: ["History"], grades: ["B+"]),
         Semester(name: "Summer 2018", gpa: 1.83, classes: ["Leadership"], grades: ["B"])
     ]
     

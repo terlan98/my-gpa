@@ -60,8 +60,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let cell = sender as? SemesterCell
         
-        if let addClassesVC = segue.destination as? BrowseSemesterVC{
-            addClassesVC.initClassesVC(semester: DataService.instance.getSemesters()[(tableView.indexPath(for: cell!)?.row)!])
+        if let addSemesterVC = segue.destination as? BrowseSemesterVC{
+            addSemesterVC.initClassesVC(semester: DataService.instance.getSemesters()[(tableView.indexPath(for: cell!)?.row)!])
         }
     }
 }

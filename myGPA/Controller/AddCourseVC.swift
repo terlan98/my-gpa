@@ -1,0 +1,46 @@
+//
+//  AddCourseVC.swift
+//  myGPA
+//
+//  Created by Tarlan Ismayilsoy on 1/15/19.
+//  Copyright © 2019 Tarlan Ismayilsoy. All rights reserved.
+//
+
+import UIKit
+
+class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var courseNameTextField: UITextField!
+    @IBOutlet weak var gradePickerView: UIPickerView!
+    
+    let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gradePickerView.delegate = self
+        gradePickerView.dataSource = self
+        
+        courseNameTextField.becomeFirstResponder()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return grades.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        label.sizeToFit()
+        label.text = String(grades[row])
+        label.textAlignment = .center
+        return label
+    }
+}

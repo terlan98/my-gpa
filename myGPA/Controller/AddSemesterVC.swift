@@ -13,6 +13,8 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var semesterNameLabel: UITextField!
     
+    var coursesToSave = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -23,12 +25,22 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        
+        return coursesToSave.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCourseCell", for: indexPath)
-        return cell
+
+        if indexPath.row == coursesToSave.count //Create an empty cell as the last element
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCourseCell", for: indexPath)
+            return cell
+        }
+        else
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath)
+            return cell
+        }
     }
     
     //size of cell:
@@ -38,6 +50,14 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         let cellHeight = UIScreen.main.bounds.height * 0.1874
 
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //If the user tapped an EmptyCourseCell
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? EmptyCourseCell
+        {
+            performSegue(withIdentifier: "AddCourseVC", sender: nil)
+        }
     }
     
 }
