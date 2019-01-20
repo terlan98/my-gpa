@@ -8,6 +8,7 @@
 
 import Foundation
 
+///A struct used for combining Name, GPA, Courses and Grades of a university semester.
 struct Semester
 {
     private(set) public var name: String

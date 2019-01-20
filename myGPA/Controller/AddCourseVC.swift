@@ -8,11 +8,13 @@
 
 import UIKit
 
+///Used as a pop-up in AddSemesterVC. Contains a text field for course name and a UIPickerView for grade
 class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var gradePickerView: UIPickerView!
     
+    ///List of possible grades to choose from
     let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
     
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)//Close the popup
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -21,10 +21,12 @@ class SemesterCell: UITableViewCell {
         customizeCell()
     }
     
+    ///Any customization to the SemesterCell should be done inside this function.
     func customizeCell(){
 //        semesterBackground.backgroundColor = bgColors.randomElement()
     }
     
+    ///Updates the name, GPA and background color of the SemesterCell according to a given Semester
     func updateCell(semester: Semester){
         semesterName.text = semester.name
         
@@ -38,6 +40,8 @@ class SemesterCell: UITableViewCell {
         
         colorizeBackground()
     }
+    
+    ///Gives a color to the SemesterCell according to its GPA
     func colorizeBackground()//TODO: Complete this function
     {
         let gpa = (semesterGpa.text! as NSString).doubleValue

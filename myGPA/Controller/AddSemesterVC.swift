@@ -8,11 +8,13 @@
 
 import UIKit
 
+///Used for creating new Semester object
 class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var semesterNameLabel: UITextField!
     
+    ///Courses that will be saved inside new Semester object
     var coursesToSave = [String]()
     
     override func viewDidLoad() {
@@ -25,18 +27,17 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return coursesToSave.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        if indexPath.row == coursesToSave.count //Create an empty cell as the last element
+        if indexPath.row == coursesToSave.count //Create an EmptyCourseCell as the last element
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCourseCell", for: indexPath)
             return cell
         }
-        else
+        else //Create a CourseCell for each course
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath)
             return cell

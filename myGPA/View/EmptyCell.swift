@@ -8,10 +8,10 @@
 
 import UIKit
 
+///A UITableViewCell that is displayed when there is nothing else to show.
 class EmptyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 }

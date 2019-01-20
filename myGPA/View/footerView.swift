@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+///Contains a plus (+) button that is used to add new semesters. Used as a footer in the tableview shwing semesters.
 class FooterView: UIView {
     
     @IBOutlet weak var addButton: UIButton!
@@ -21,12 +21,10 @@ class FooterView: UIView {
         super.awakeFromNib()
         customizeView()
     }
-
+    
+    ///Any customization to this view should be done inside this function.
     private func customizeView()
     {
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
-        addButton.titleLabel?.baselineAdjustment = .none
-    }
-    
-    
+    }    
 }

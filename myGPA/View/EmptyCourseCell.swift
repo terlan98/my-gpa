@@ -8,6 +8,7 @@
 
 import UIKit
 
+///A UICollectionViewCell containing a plus sign. It is used for adding new Courses to a Semester.
 class EmptyCourseCell: UICollectionViewCell
 {
     @IBOutlet weak var innerView: UIView!
@@ -19,11 +20,11 @@ class EmptyCourseCell: UICollectionViewCell
         customizeCell()
     }
     
+    ///Any customization to this view should be done inside this function.
     func customizeCell()
     {
         self.setGradientBackgroundColor(colorOne: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1), colorTow: #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1))
         layer.cornerRadius = 15
-        
         innerView.layer.cornerRadius = 10
         
         labelBackgroundView.setGradientBackgroundColor(colorOne: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1), colorTow: #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1))

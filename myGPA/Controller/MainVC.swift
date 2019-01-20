@@ -21,6 +21,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 120
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let semesterCount = DataService.instance.getSemesters().count
         if semesterCount == 0 { return 1 }//If there are no semesters, create one row for the EmptyCell
@@ -47,7 +48,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if DataService.instance.getSemesters().count == 0 {return}//If there are no semesters, do not perform a segue
+        if DataService.instance.getSemesters().count == 0 {return}//If there are no semesters, return without performing a segue
 
         let currentCell = tableView.cellForRow(at: indexPath) as? SemesterCell
         

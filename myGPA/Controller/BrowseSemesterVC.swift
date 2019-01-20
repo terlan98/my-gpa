@@ -8,13 +8,14 @@
 
 import UIKit
 
+///Shows info about a Semester chosen from MainVC
 class BrowseSemesterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
+
+    ///Initializes this ViewController according to a given Semester
     func initClassesVC(semester: Semester){
         navigationItem.title = semester.name
     }
