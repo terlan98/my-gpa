@@ -15,7 +15,7 @@ class DataService
     
 //    private var semester = [Semester]()
     
-    private var semester = [
+    private var semesters = [
         Semester(name: "Spring 2018", gpa: 3.87, classes: ["Calculus"], grades: ["A"]),
         Semester(name: "Fall 2019", gpa: 2.58, classes: ["History"], grades: ["B+"]),
         Semester(name: "Summer 2018", gpa: 1.83, classes: ["Leadership"], grades: ["B"])
@@ -24,12 +24,12 @@ class DataService
     ///Returns an array containing Semesters added by the user
     func getSemesters() -> [Semester]
     {
-        return semester
+        return semesters
     }
     
     ///Adds a new Semester to the semesters array
-    func addSemester(name: String, gpa: Double, classes: [String], grades: [String])
+    func addSemester(semester: Semester)
     {
-        semester.append(Semester(name: name, gpa: gpa, classes: classes, grades: grades))
+        semesters.append(semester)
     }
 }

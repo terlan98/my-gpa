@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AddSemesterDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,7 +21,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 120
     }
     
-    
+    // MARK: TableView functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let semesterCount = DataService.instance.getSemesters().count
         if semesterCount == 0 { return 1 }//If there are no semesters, create one row for the EmptyCell
@@ -57,12 +57,24 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "AddClasses", sender: currentCell)
     }
     
+    // MARK: Segue functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let cell = sender as? SemesterCell
         
-        if let addSemesterVC = segue.destination as? BrowseSemesterVC{
-            addSemesterVC.initClassesVC(semester: DataService.instance.getSemesters()[(tableView.indexPath(for: cell!)?.row)!])
+        if let browseSemesterVC = segue.destination as? BrowseSemesterVC
+        {
+            browseSemesterVC.initClassesVC(semester: DataService.instance.getSemesters()[(tableView.indexPath(for: cell!)?.row)!])
         }
+        else if let addSemesterVC = segue.destination as? AddSemesterVC
+        {
+            addSemesterVC.delegate = self
+        }
+    }
+
+    func addSemester(semester: Semester)
+    {
+        DataService.instance.addSemester(semester: semester)
+        tableView.reloadData()
     }
 }

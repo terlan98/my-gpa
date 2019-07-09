@@ -8,7 +8,7 @@
 
 import UIKit
 
-///A UITableViewCell that is displayed when there is nothing else to show.
+///A UITableViewCell that is displayed when there is nothing else to show. Contains a message for the user.
 class EmptyCell: UITableViewCell {
 
     override func awakeFromNib() {

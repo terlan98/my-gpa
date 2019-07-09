@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uJK-Ga-vdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uJK-Ga-vdB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -178,7 +178,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.96276986019999999" green="0.31330694079999999" blue="0.14066212689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCourseCell" id="kMK-9a-fBr" customClass="EmptyCourseCell" customModule="myGPA" customModuleProvider="target">
                                         <rect key="frame" x="195" y="15" width="164" height="125"/>
@@ -251,11 +251,15 @@
                         <viewLayoutGuide key="safeArea" id="gOJ-pU-Ie7"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Semester" id="bMc-gQ-yMe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sjc-hW-OZV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sjc-hW-OZV">
+                            <connections>
+                                <action selector="saveBtnTapped:" destination="RLv-EN-jzY" id="yE8-73-xRf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="995-GR-NCU" id="faP-Aq-v6e"/>
-                        <outlet property="semesterNameLabel" destination="MRN-Bl-hT4" id="hRB-qZ-2Sp"/>
+                        <outlet property="semesterNameTxtField" destination="MRN-Bl-hT4" id="hRB-qZ-2Sp"/>
                         <segue destination="hHy-eH-elt" kind="presentation" identifier="AddCourseVC" modalTransitionStyle="crossDissolve" id="129-ga-775"/>
                     </connections>
                 </viewController>
