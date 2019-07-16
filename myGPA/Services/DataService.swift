@@ -16,9 +16,9 @@ class DataService
     private var semesters = [Semester]()
     
 //    private var semesters = [
-//        Semester(name: "Spring 2018", gpa: 3.87, classes: ["Calculus"], grades: ["A"]),
-//        Semester(name: "Fall 2019", gpa: 2.58, classes: ["History"], grades: ["B+"]),
-//        Semester(name: "Summer 2018", gpa: 1.83, classes: ["Leadership"], grades: ["B"])
+//        Semester(name: "Spring 2018", gpa: 3.87, courses: ["Calculus"]),
+//        Semester(name: "Fall 2019", gpa: 2.58, courses: ["History"]),
+//        Semester(name: "Summer 2018", gpa: 1.83, courses: ["Leadership"])
 //    ]//Dummy Semester data
     
     ///Returns an array containing Semesters added by the user

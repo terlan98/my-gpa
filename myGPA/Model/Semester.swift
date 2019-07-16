@@ -12,14 +12,12 @@ import Foundation
 struct Semester {
     private(set) public var name: String
     private(set) public var gpa: Double
-    private(set) public var courses: [String]
-    private(set) public var grades: [String]
+    private(set) public var courses: [Course]
     
     
-    init(name: String, gpa: Double, classes: [String], grades: [String]) {
+    init(name: String, gpa: Double, courses: [Course]) {
         self.name = name
         self.gpa = gpa
-        self.courses = classes
-        self.grades = grades
+        self.courses = courses
     }
 }

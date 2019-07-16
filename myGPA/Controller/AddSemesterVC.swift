@@ -47,6 +47,10 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath) as! CourseCell
             cell.updateCell(course: coursesToSave[indexPath.row])
+            cell.deleteBtnAction = {
+                self.coursesToSave.remove(at: indexPath.row)
+                collectionView.deleteItems(at: [indexPath])
+            }
             return cell
         }
     }
@@ -85,7 +89,7 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     {
         if(semesterNameTxtField.text == "")
         {
-            let alert = UIAlertController(title: "Can't save", message: "Semester name cannot be empty", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Semester name", message: "Semester name cannot be empty", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             
@@ -93,7 +97,7 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
         else if(coursesToSave.count == 0)
         {
-            let alert = UIAlertController(title: "Can't save", message: "You should add at least one course to this semester", preferredStyle: .alert)
+            let alert = UIAlertController(title: "No course", message: "You should add at least one course to this semester", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             
@@ -103,7 +107,7 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         {
             if(delegate == nil) {return}
             
-            delegate?.userDidSaveSemester(semester: Semester(name: semesterNameTxtField.text!, gpa: 4.0, classes: ["a"], grades: ["a"]))
+            delegate?.userDidSaveSemester(semester: Semester(name: semesterNameTxtField.text!, gpa: 4.0, courses: coursesToSave))
             self.navigationController?.popViewController(animated: true)
         }
     }

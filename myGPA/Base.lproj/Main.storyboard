@@ -138,14 +138,100 @@
                     <view key="view" contentMode="scaleToFill" id="XaA-qT-MMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COURSES:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGX-CG-XRk">
+                                <rect key="frame" x="16" y="131" width="69" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-zB-h6d">
+                                <rect key="frame" x="0.0" y="150.5" width="375" height="516.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="FVL-oR-3wg">
+                                    <size key="itemSize" width="164" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="15" maxX="16" maxY="15"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CourseCell" id="s10-aP-wzM" customClass="CourseCell" customModule="myGPA" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="15" width="164" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-u9-OGv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="138"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTl-dR-wYt">
+                                                    <rect key="frame" x="35" y="40" width="125" height="123"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="90"/>
+                                                    <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="0.3537564212" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming Principles II" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZV-e9-s2s">
+                                                    <rect key="frame" x="10" y="7" width="152" height="40"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-O2-drr">
+                                                    <rect key="frame" x="148" y="-6" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.27480776829999998" blue="0.1245732125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="✕">
+                                                        <color key="titleColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteBtnTapped:" destination="s10-aP-wzM" eventType="touchUpInside" id="zh3-N2-TSk"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kTl-dR-wYt" secondAttribute="trailing" constant="5" id="1Um-ZN-rFD"/>
+                                            <constraint firstAttribute="bottom" secondItem="kTl-dR-wYt" secondAttribute="bottom" constant="-25" id="5Di-a5-VZm"/>
+                                            <constraint firstItem="Rlj-u9-OGv" firstAttribute="top" secondItem="s10-aP-wzM" secondAttribute="top" id="6iq-zp-vSf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rlj-u9-OGv" secondAttribute="trailing" id="Ie3-Vy-T8l"/>
+                                            <constraint firstItem="Rlj-u9-OGv" firstAttribute="leading" secondItem="s10-aP-wzM" secondAttribute="leading" id="YYM-Ex-q7F"/>
+                                            <constraint firstAttribute="trailing" secondItem="oZV-e9-s2s" secondAttribute="trailing" constant="3" id="ZAY-Nr-PjJ"/>
+                                            <constraint firstItem="oZV-e9-s2s" firstAttribute="top" secondItem="s10-aP-wzM" secondAttribute="top" constant="7" id="gxG-J1-H2G"/>
+                                            <constraint firstItem="oZV-e9-s2s" firstAttribute="leading" secondItem="s10-aP-wzM" secondAttribute="leading" constant="10" id="wga-dw-j1K"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rlj-u9-OGv" secondAttribute="bottom" id="wl6-GC-WVN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="backView" destination="Rlj-u9-OGv" id="ljE-BU-Beb"/>
+                                            <outlet property="courseGradeLabel" destination="kTl-dR-wYt" id="Yo9-6x-hWE"/>
+                                            <outlet property="courseNameLabel" destination="oZV-e9-s2s" id="eUq-i4-cXu"/>
+                                            <outlet property="deleteBtn" destination="JDr-O2-drr" id="9Jk-h3-Shf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YGX-CG-XRk" firstAttribute="leading" secondItem="KC0-km-bL6" secondAttribute="leading" constant="16" id="2bo-QT-3kJ"/>
+                            <constraint firstItem="BEK-zB-h6d" firstAttribute="bottom" secondItem="KC0-km-bL6" secondAttribute="bottom" id="Nah-ot-iyz"/>
+                            <constraint firstItem="BEK-zB-h6d" firstAttribute="top" secondItem="YGX-CG-XRk" secondAttribute="bottom" id="OGV-Bd-PwW"/>
+                            <constraint firstItem="BEK-zB-h6d" firstAttribute="trailing" secondItem="KC0-km-bL6" secondAttribute="trailing" id="hoI-jn-8v7"/>
+                            <constraint firstItem="YGX-CG-XRk" firstAttribute="top" secondItem="KC0-km-bL6" secondAttribute="top" constant="15" id="kXS-Fi-uRK"/>
+                            <constraint firstItem="BEK-zB-h6d" firstAttribute="leading" secondItem="KC0-km-bL6" secondAttribute="leading" id="zhW-kJ-BGt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KC0-km-bL6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Semester Name" id="MRg-io-hUd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="BEK-zB-h6d" id="QXz-bS-Pkz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lx1-qd-Gq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="467"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="466.41679160419795"/>
         </scene>
         <!--New Semester-->
         <scene sceneID="B0x-b8-Q2c">
@@ -178,6 +264,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKA-5l-gFq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkQ-u6-HhY">
                                                     <rect key="frame" x="34" y="27" width="125" height="123"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="90"/>
@@ -190,19 +280,36 @@
                                                     <color key="textColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iO-aQ-8mG">
+                                                    <rect key="frame" x="148" y="-6" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.27480776832705711" blue="0.12457321249531661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="✕">
+                                                        <color key="titleColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteBtnTapped:" destination="mH4-cR-44J" eventType="touchUpInside" id="nqq-jr-vwi"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Rfy-eO-aQA" firstAttribute="top" secondItem="mH4-cR-44J" secondAttribute="top" constant="7" id="NFw-oR-zLC"/>
+                                            <constraint firstAttribute="trailing" secondItem="KKA-5l-gFq" secondAttribute="trailing" id="eK3-vM-qfh"/>
                                             <constraint firstItem="Rfy-eO-aQA" firstAttribute="leading" secondItem="mH4-cR-44J" secondAttribute="leading" constant="10" id="gQD-v1-ppy"/>
+                                            <constraint firstItem="KKA-5l-gFq" firstAttribute="top" secondItem="mH4-cR-44J" secondAttribute="top" id="hDQ-ol-WwI"/>
+                                            <constraint firstAttribute="bottom" secondItem="KKA-5l-gFq" secondAttribute="bottom" id="heJ-WH-9p0"/>
                                             <constraint firstAttribute="trailing" secondItem="nkQ-u6-HhY" secondAttribute="trailing" constant="5" id="ne4-HJ-XbN"/>
                                             <constraint firstAttribute="trailing" secondItem="Rfy-eO-aQA" secondAttribute="trailing" constant="3" id="omx-l6-qcp"/>
+                                            <constraint firstItem="KKA-5l-gFq" firstAttribute="leading" secondItem="mH4-cR-44J" secondAttribute="leading" id="s8c-zo-LBM"/>
                                             <constraint firstAttribute="bottom" secondItem="nkQ-u6-HhY" secondAttribute="bottom" constant="-25" id="wp6-gM-NDQ"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backView" destination="KKA-5l-gFq" id="dAv-dH-tKR"/>
                                             <outlet property="courseGradeLabel" destination="nkQ-u6-HhY" id="QZ1-gP-FMD"/>
                                             <outlet property="courseNameLabel" destination="Rfy-eO-aQA" id="7MM-N5-taa"/>
+                                            <outlet property="deleteBtn" destination="0iO-aQ-8mG" id="IeV-f6-uTG"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCourseCell" id="kMK-9a-fBr" customClass="EmptyCourseCell" customModule="myGPA" customModuleProvider="target">
