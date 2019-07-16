@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650ECF1B22DA491400176255 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650ECF1A22DA491400176255 /* Course.swift */; };
+		650ECF1D22DA5C9700176255 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650ECF1C22DA5C9700176255 /* CourseCell.swift */; };
 		654663BC21E6315A00C082B7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BB21E6315A00C082B7 /* Semester.swift */; };
 		654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */; };
 		655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EB52921EB6B3600FA33E4 /* Gradient.swift */; };
-		6599A93321E76A4B00EB9427 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599A93221E76A4B00EB9427 /* EmptyCell.swift */; };
 		6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599A93421E774E700EB9427 /* AddSemesterVC.swift */; };
 		65A7045B21EE5E610095A1F4 /* AddCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A7045A21EE5E610095A1F4 /* AddCourseVC.swift */; };
 		65C8BD9921E6446300E8B897 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8BD9821E6446300E8B897 /* DataService.swift */; };
@@ -26,10 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650ECF1A22DA491400176255 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		650ECF1C22DA5C9700176255 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		654663BB21E6315A00C082B7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSemesterVC.swift; sourceTree = "<group>"; };
 		655EB52921EB6B3600FA33E4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
-		6599A93221E76A4B00EB9427 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		6599A93421E774E700EB9427 /* AddSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSemesterVC.swift; sourceTree = "<group>"; };
 		65A7045A21EE5E610095A1F4 /* AddCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseVC.swift; sourceTree = "<group>"; };
 		65C8BD9821E6446300E8B897 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -123,8 +125,8 @@
 			children = (
 				65DF3A7E21E609F200392B77 /* SemesterCell.swift */,
 				65D5DB2221E628DF00707E90 /* FooterView.swift */,
-				6599A93221E76A4B00EB9427 /* EmptyCell.swift */,
 				65DAB50721ED1152004AFA04 /* EmptyCourseCell.swift */,
+				650ECF1C22DA5C9700176255 /* CourseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				654663BB21E6315A00C082B7 /* Semester.swift */,
+				650ECF1A22DA491400176255 /* Course.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,16 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650ECF1B22DA491400176255 /* Course.swift in Sources */,
 				65A7045B21EE5E610095A1F4 /* AddCourseVC.swift in Sources */,
 				65DF3A6C21E5F97800392B77 /* MainVC.swift in Sources */,
 				6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */,
-				6599A93321E76A4B00EB9427 /* EmptyCell.swift in Sources */,
 				65DAB50A21ED125D004AFA04 /* KeyboardHider.swift in Sources */,
 				65C8BD9921E6446300E8B897 /* DataService.swift in Sources */,
 				65D5DB2321E628DF00707E90 /* FooterView.swift in Sources */,
 				655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */,
 				65DF3A6A21E5F97800392B77 /* AppDelegate.swift in Sources */,
 				654663BC21E6315A00C082B7 /* Semester.swift in Sources */,
+				650ECF1D22DA5C9700176255 /* CourseCell.swift in Sources */,
 				654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */,
 				65DF3A7F21E609F200392B77 /* SemesterCell.swift in Sources */,
 				65DAB50821ED1152004AFA04 /* EmptyCourseCell.swift in Sources */,

@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol CourseDelegate {
+    func userDidSaveCourse(course: Course)
+}
+
 ///Used as a pop-up in AddSemesterVC. Contains a text field for course name and a UIPickerView for grade
 class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var delegate: CourseDelegate? = nil
+    
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var gradePickerView: UIPickerView!
+    @IBOutlet weak var creditTextField: UITextField!
     
     ///List of possible grades to choose from
     let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
@@ -24,10 +31,6 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         courseNameTextField.becomeFirstResponder()
         hideKeyboardWhenTappedAround()
-    }
-    
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)//Close the popup
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -44,5 +47,48 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         label.text = String(grades[row])
         label.textAlignment = .center
         return label
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        if(delegate == nil) {return}
+        
+        if(courseNameTextField.text == "")//play shake animation to signal the user about the course name
+        {
+            UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {
+                self.courseNameTextField.center.x += 10
+            }, completion: nil)
+            UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveEaseIn, animations: {
+                self.courseNameTextField.center.x -= 20
+            }, completion: nil)
+            UIView.animate(withDuration: 0.1, delay: 0.2, options: .curveEaseIn, animations: {
+                self.courseNameTextField.center.x += 10
+            }, completion: nil)
+            
+            return
+        }
+        else if (creditTextField.text == "")
+        {
+            UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {
+                self.creditTextField.center.x += 10
+            }, completion: nil)
+            UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveEaseIn, animations: {
+                self.creditTextField.center.x -= 20
+            }, completion: nil)
+            UIView.animate(withDuration: 0.1, delay: 0.2, options: .curveEaseIn, animations: {
+                self.creditTextField.center.x += 10
+            }, completion: nil)
+            
+            return
+        }
+        else
+        {
+            delegate?.userDidSaveCourse(course: Course(name: courseNameTextField.text!, grade: grades[gradePickerView.selectedRow(inComponent: 0)], credit: Double(creditTextField.text!)!))
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dismissBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

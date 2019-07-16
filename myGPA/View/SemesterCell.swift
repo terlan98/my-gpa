@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//@IBDesignable
+
 class SemesterCell: UITableViewCell {
 
     @IBOutlet weak var semesterName: UILabel!

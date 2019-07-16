@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AddSemesterDelegate {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SemesterDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,7 +33,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AddS
         
         if semesterCount == 0 //If there are no semesters, show an EmptyCell with a message
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell") as! EmptyCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell")!
             
             return cell
         }
@@ -54,7 +54,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AddS
         
         tableView.deselectRow(at: indexPath, animated: false)//So that the cell does not remain selected after the segue
         
-        performSegue(withIdentifier: "AddClasses", sender: currentCell)
+        performSegue(withIdentifier: "BrowseClasses", sender: currentCell)
     }
     
     // MARK: Segue functions
@@ -72,7 +72,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AddS
         }
     }
 
-    func addSemester(semester: Semester)
+    func userDidSaveSemester(semester: Semester)
     {
         DataService.instance.addSemester(semester: semester)
         tableView.reloadData()

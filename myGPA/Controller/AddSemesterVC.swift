@@ -8,21 +8,20 @@
 
 import UIKit
 
-protocol AddSemesterDelegate// TODO: Complete this protocol
-{
-    func addSemester(semester: Semester)
+protocol SemesterDelegate {
+    func userDidSaveSemester(semester: Semester)
 }
 
 ///Used for creating new Semester object
-class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CourseDelegate {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var semesterNameTxtField: UITextField!
     
-    ///Courses that will be saved inside new Semester object
-    var coursesToSave = [String]()
+    ///Courses that will be saved inside the new Semester object
+    var coursesToSave = [Course]()
     
-    var delegate: AddSemesterDelegate?
+    var delegate: SemesterDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +45,8 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
         else // Create a CourseCell for each course
         {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath) as! CourseCell
+            cell.updateCell(course: coursesToSave[indexPath.row])
             return cell
         }
     }
@@ -62,16 +62,49 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // If the user tapped an EmptyCourseCell
-        if let currentCell = collectionView.cellForItem(at: indexPath) as? EmptyCourseCell
+        if ((collectionView.cellForItem(at: indexPath) as? EmptyCourseCell) != nil)
         {
             performSegue(withIdentifier: "AddCourseVC", sender: nil)
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? AddCourseVC
+        {
+            dest.delegate = self
+        }
+    }
+    
+    // Reload the collectionView after the user has added a new course
+    func userDidSaveCourse(course: Course) {
+        coursesToSave.append(course)
+        collectionView.reloadData()
+    }
+    
     @IBAction func saveBtnTapped(_ sender: Any)
     {
-        // TODO: COMPLETE
-        delegate?.addSemester(semester: Semester(name: semesterNameTxtField.text!, gpa: 4.0, classes: ["a"], grades: ["a"]))
-        self.navigationController?.popViewController(animated: true)
+        if(semesterNameTxtField.text == "")
+        {
+            let alert = UIAlertController(title: "Can't save", message: "Semester name cannot be empty", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        else if(coursesToSave.count == 0)
+        {
+            let alert = UIAlertController(title: "Can't save", message: "You should add at least one course to this semester", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        else
+        {
+            if(delegate == nil) {return}
+            
+            delegate?.userDidSaveSemester(semester: Semester(name: semesterNameTxtField.text!, gpa: 4.0, classes: ["a"], grades: ["a"]))
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
