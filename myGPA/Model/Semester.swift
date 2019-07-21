@@ -14,10 +14,14 @@ struct Semester {
     private(set) public var gpa: Double
     private(set) public var courses: [Course]
     
-    
     init(name: String, gpa: Double, courses: [Course]) {
         self.name = name
         self.gpa = gpa
         self.courses = courses
+    }
+    
+    mutating func deleteCourse(at index: Int)
+    {
+        courses.remove(at: index)
     }
 }

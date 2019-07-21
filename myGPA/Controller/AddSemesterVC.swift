@@ -46,7 +46,7 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         else // Create a CourseCell for each course
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath) as! CourseCell
-            cell.updateCell(course: coursesToSave[indexPath.row])
+            cell.updateCell(course: coursesToSave[indexPath.row], isDeletable: true)
             cell.deleteBtnAction = {
                 self.coursesToSave.remove(at: indexPath.row)
                 collectionView.deleteItems(at: [indexPath])

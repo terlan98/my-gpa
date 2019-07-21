@@ -32,4 +32,10 @@ class DataService
     {
         semesters.append(semester)
     }
+    
+    ///Replaces a semester with a new one
+    func replaceSemester(at index: Int, with semester: Semester)
+    {
+        semesters[index] = semester
+    }
 }

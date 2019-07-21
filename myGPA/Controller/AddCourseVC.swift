@@ -22,7 +22,7 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var creditTextField: UITextField!
     
     ///List of possible grades to choose from
-    let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
+    let grades = ["A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
