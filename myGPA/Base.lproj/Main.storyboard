@@ -210,6 +210,54 @@
                                             <outlet property="deleteBtn" destination="JDr-O2-drr" id="9Jk-h3-Shf"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCourseCell" id="slf-0y-zFC" customClass="EmptyCourseCell" customModule="myGPA" customModuleProvider="target">
+                                        <rect key="frame" x="195" y="15" width="164" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gky-Wx-9F6">
+                                                    <rect key="frame" x="5" y="5" width="154" height="115"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axc-dc-yja">
+                                                            <rect key="frame" x="51.5" y="32" width="51.5" height="51.5"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="＋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97X-Bz-ROL">
+                                                            <rect key="frame" x="51.5" y="32" width="51.5" height="51.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="97X-Bz-ROL" secondAttribute="height" multiplier="1:1" id="L8Y-z8-Ji5"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="43"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="97X-Bz-ROL" firstAttribute="centerX" secondItem="gky-Wx-9F6" secondAttribute="centerX" id="J8A-3V-RPX"/>
+                                                        <constraint firstItem="axc-dc-yja" firstAttribute="centerX" secondItem="gky-Wx-9F6" secondAttribute="centerX" id="LhR-iQ-hOf"/>
+                                                        <constraint firstItem="97X-Bz-ROL" firstAttribute="centerY" secondItem="gky-Wx-9F6" secondAttribute="centerY" id="fHp-E6-tvt"/>
+                                                        <constraint firstItem="axc-dc-yja" firstAttribute="centerY" secondItem="gky-Wx-9F6" secondAttribute="centerY" id="iNc-Jc-yba"/>
+                                                        <constraint firstItem="axc-dc-yja" firstAttribute="height" secondItem="97X-Bz-ROL" secondAttribute="height" id="mpN-GY-GUP"/>
+                                                        <constraint firstItem="axc-dc-yja" firstAttribute="width" secondItem="97X-Bz-ROL" secondAttribute="width" id="nK4-iL-njp"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gky-Wx-9F6" secondAttribute="trailing" constant="5" id="4Sh-Vr-Ac4"/>
+                                            <constraint firstAttribute="bottom" secondItem="gky-Wx-9F6" secondAttribute="bottom" constant="5" id="FLm-BL-OPW"/>
+                                            <constraint firstItem="gky-Wx-9F6" firstAttribute="leading" secondItem="slf-0y-zFC" secondAttribute="leading" constant="5" id="PoT-Ao-LDt"/>
+                                            <constraint firstItem="gky-Wx-9F6" firstAttribute="top" secondItem="slf-0y-zFC" secondAttribute="top" constant="5" id="yRN-gl-cyf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="innerView" destination="gky-Wx-9F6" id="Nz4-VT-1w5"/>
+                                            <outlet property="labelBackgroundView" destination="axc-dc-yja" id="dZD-vN-hif"/>
+                                            <outlet property="plusLabel" destination="97X-Bz-ROL" id="caJ-au-cbS"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
@@ -234,11 +282,79 @@
                     <connections>
                         <outlet property="collectionView" destination="BEK-zB-h6d" id="QXz-bS-Pkz"/>
                         <outlet property="editBtn" destination="dot-2C-GoB" id="aMt-2Y-nJZ"/>
+                        <segue destination="hHy-eH-elt" kind="presentation" identifier="AddCourseVC" modalTransitionStyle="crossDissolve" id="GEb-7O-KOd"/>
+                        <segue destination="qLC-bb-9Dt" kind="presentation" identifier="BrowseCourseVC" modalTransitionStyle="crossDissolve" id="06D-3a-rVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lx1-qd-Gq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1933.5999999999999" y="466.41679160419795"/>
+        </scene>
+        <!--Browse CourseVC-->
+        <scene sceneID="xOa-rj-hrn">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="qLC-bb-9Dt" customClass="BrowseCourseVC" customModule="myGPA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ra-gG-iyX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mI-Tt-lbm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <action selector="dismissBtnTapped:" destination="hHy-eH-elt" eventType="touchUpInside" id="BQs-o9-v23"/>
+                                    <action selector="dismissBtnTapped:" destination="qLC-bb-9Dt" eventType="touchUpInside" id="XKk-p9-XSu"/>
+                                    <action selector="dismissBtnTapped:" destination="OC7-aS-0M0" eventType="touchUpInside" id="YC2-CX-yKc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I0M-cv-ELu">
+                                <rect key="frame" x="16" y="89" width="343" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Programming Principles II" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrh-a2-KQx">
+                                        <rect key="frame" x="8" y="8" width="327" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="26"/>
+                                        <color key="textColor" red="0.93550935317244455" green="0.94477182201573606" blue="0.94477182201573606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-j0-jC0">
+                                        <rect key="frame" x="80" y="148" width="255" height="144"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="167"/>
+                                        <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="0.3537564212" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6 credits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xed-1F-hew">
+                                        <rect key="frame" x="16" y="83" width="319" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                        <color key="textColor" red="0.93550935319999995" green="0.94477182199999998" blue="0.94477182199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3mI-Tt-lbm" firstAttribute="leading" secondItem="6bh-2M-PQE" secondAttribute="leading" id="MHA-KI-XoV"/>
+                            <constraint firstItem="3mI-Tt-lbm" firstAttribute="trailing" secondItem="6bh-2M-PQE" secondAttribute="trailing" id="Uqg-Va-9BK"/>
+                            <constraint firstItem="3mI-Tt-lbm" firstAttribute="top" secondItem="0ra-gG-iyX" secondAttribute="top" id="egb-jG-fuG"/>
+                            <constraint firstItem="3mI-Tt-lbm" firstAttribute="bottom" secondItem="6bh-2M-PQE" secondAttribute="bottom" id="vud-LI-pKu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6bh-2M-PQE"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="I0M-cv-ELu" id="2Mi-o0-WcQ"/>
+                        <outlet property="creditLabel" destination="xed-1F-hew" id="BAd-Cx-g9u"/>
+                        <outlet property="gradeLabel" destination="wVC-j0-jC0" id="wXd-NV-LYo"/>
+                        <outlet property="nameLabel" destination="xrh-a2-KQx" id="ISu-bt-ssm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ovd-69-GgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OC7-aS-0M0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2813.5999999999999" y="115.59220389805098"/>
         </scene>
         <!--New Semester-->
         <scene sceneID="B0x-b8-Q2c">
@@ -490,7 +606,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.35129494863013699" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.35129494863013699" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0l9-aU-AHN" firstAttribute="centerY" secondItem="hCh-cD-c0H" secondAttribute="centerY" constant="-97.5" id="5E6-pW-opc"/>
                             <constraint firstItem="qdh-JC-9Eg" firstAttribute="bottom" secondItem="b52-SK-l7S" secondAttribute="bottom" id="Tf9-qQ-qWf"/>
@@ -509,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niU-ro-b5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="1153.6731634182909"/>
+            <point key="canvasLocation" x="2814" y="793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OVU-93-nHh">
@@ -530,4 +646,7 @@
             <point key="canvasLocation" x="220" y="792.95352323838085"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GEb-7O-KOd"/>
+    </inferredMetricsTieBreakers>
 </document>

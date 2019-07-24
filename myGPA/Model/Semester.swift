@@ -24,4 +24,10 @@ struct Semester {
     {
         courses.remove(at: index)
     }
+    
+    mutating func addCourse(course: Course)
+    {
+        courses.append(course)
+    }
+
 }

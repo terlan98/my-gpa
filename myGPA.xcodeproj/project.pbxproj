@@ -11,6 +11,7 @@
 		650ECF1D22DA5C9700176255 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650ECF1C22DA5C9700176255 /* CourseCell.swift */; };
 		654663BC21E6315A00C082B7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BB21E6315A00C082B7 /* Semester.swift */; };
 		654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */; };
+		655C359122E8E7B200D3095C /* BrowseCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C359022E8E7B200D3095C /* BrowseCourseVC.swift */; };
 		655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EB52921EB6B3600FA33E4 /* Gradient.swift */; };
 		6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599A93421E774E700EB9427 /* AddSemesterVC.swift */; };
 		65A7045B21EE5E610095A1F4 /* AddCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A7045A21EE5E610095A1F4 /* AddCourseVC.swift */; };
@@ -31,6 +32,7 @@
 		650ECF1C22DA5C9700176255 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		654663BB21E6315A00C082B7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSemesterVC.swift; sourceTree = "<group>"; };
+		655C359022E8E7B200D3095C /* BrowseCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCourseVC.swift; sourceTree = "<group>"; };
 		655EB52921EB6B3600FA33E4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		6599A93421E774E700EB9427 /* AddSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSemesterVC.swift; sourceTree = "<group>"; };
 		65A7045A21EE5E610095A1F4 /* AddCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseVC.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */,
 				6599A93421E774E700EB9427 /* AddSemesterVC.swift */,
 				65A7045A21EE5E610095A1F4 /* AddCourseVC.swift */,
+				655C359022E8E7B200D3095C /* BrowseCourseVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */,
 				65DAB50A21ED125D004AFA04 /* KeyboardHider.swift in Sources */,
 				65C8BD9921E6446300E8B897 /* DataService.swift in Sources */,
+				655C359122E8E7B200D3095C /* BrowseCourseVC.swift in Sources */,
 				65D5DB2321E628DF00707E90 /* FooterView.swift in Sources */,
 				655EB52A21EB6B3600FA33E4 /* Gradient.swift in Sources */,
 				65DF3A6A21E5F97800392B77 /* AppDelegate.swift in Sources */,

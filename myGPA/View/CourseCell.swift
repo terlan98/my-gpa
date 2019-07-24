@@ -39,6 +39,7 @@ class CourseCell: UICollectionViewCell {
         wiggleAnimationState(state: isDeletable)
     }
     
+    /// A function that enables the wiggle animation if its argument is true
     func wiggleAnimationState(state: Bool)
     {
         if(!state) {return}
