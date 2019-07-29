@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		650ECF1B22DA491400176255 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650ECF1A22DA491400176255 /* Course.swift */; };
 		650ECF1D22DA5C9700176255 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650ECF1C22DA5C9700176255 /* CourseCell.swift */; };
+		652EB2D122EF764D00D0C012 /* DoubleWithoutTrailingZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652EB2D022EF764D00D0C012 /* DoubleWithoutTrailingZero.swift */; };
 		654663BC21E6315A00C082B7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BB21E6315A00C082B7 /* Semester.swift */; };
 		654663BE21E6323E00C082B7 /* BrowseSemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */; };
 		655C359122E8E7B200D3095C /* BrowseCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C359022E8E7B200D3095C /* BrowseCourseVC.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		650ECF1A22DA491400176255 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		650ECF1C22DA5C9700176255 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		652EB2D022EF764D00D0C012 /* DoubleWithoutTrailingZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleWithoutTrailingZero.swift; sourceTree = "<group>"; };
 		654663BB21E6315A00C082B7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		654663BD21E6323E00C082B7 /* BrowseSemesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSemesterVC.swift; sourceTree = "<group>"; };
 		655C359022E8E7B200D3095C /* BrowseCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCourseVC.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				655EB52921EB6B3600FA33E4 /* Gradient.swift */,
 				65DAB50921ED125D004AFA04 /* KeyboardHider.swift */,
+				652EB2D022EF764D00D0C012 /* DoubleWithoutTrailingZero.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				650ECF1B22DA491400176255 /* Course.swift in Sources */,
 				65A7045B21EE5E610095A1F4 /* AddCourseVC.swift in Sources */,
 				65DF3A6C21E5F97800392B77 /* MainVC.swift in Sources */,
+				652EB2D122EF764D00D0C012 /* DoubleWithoutTrailingZero.swift in Sources */,
 				6599A93521E774E700EB9427 /* AddSemesterVC.swift in Sources */,
 				65DAB50A21ED125D004AFA04 /* KeyboardHider.swift in Sources */,
 				65C8BD9921E6446300E8B897 /* DataService.swift in Sources */,

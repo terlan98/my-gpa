@@ -22,7 +22,6 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.setEditing(false, animated: false)
     }
 
     ///Initializes this ViewController according to a given Semester
@@ -41,11 +40,10 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         
         if(indexPath.row == semester.courses.count) // Add a '+' cell if edit mode enabled
         {
-            print("entered")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCourseCell", for: indexPath)
             return cell
         }
-        print(indexPath.row)
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseCell", for: indexPath) as! CourseCell
         cell.updateCell(course: semester.courses[indexPath.row], isDeletable: isEditModeEnabled)
         
@@ -78,9 +76,11 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         {
             performSegue(withIdentifier: "AddCourseVC", sender: nil)
         }
-        else
+        else // Destination is BrowseCourseVC
         {
-            performSegue(withIdentifier: "BrowseCourseVC", sender: nil)
+            if(isEditModeEnabled) {return}
+            
+            performSegue(withIdentifier: "BrowseCourseVC", sender: semester.courses[indexPath.row])
         }
     }
     
@@ -88,6 +88,12 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         if let dest = segue.destination as? AddCourseVC
         {
             dest.delegate = self
+        }
+        else // Destination is BrowseCourseVC
+        {
+            let dest = segue.destination as! BrowseCourseVC
+            
+            dest.initBrowseCoursesVC(course: sender as! Course)
         }
     }
     

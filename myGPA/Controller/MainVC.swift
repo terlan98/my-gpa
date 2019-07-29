@@ -57,6 +57,17 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Seme
         performSegue(withIdentifier: "BrowseClasses", sender: currentCell)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true // enable swiping the rows to edit (delete)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            DataService.instance.deleteSemester(index: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: Segue functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

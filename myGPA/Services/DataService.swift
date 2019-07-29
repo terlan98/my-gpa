@@ -38,4 +38,10 @@ class DataService
     {
         semesters[index] = semester
     }
+    
+    ///Deletes the semester at the given index
+    func deleteSemester(index: Int)
+    {
+        semesters.remove(at: index)
+    }
 }
