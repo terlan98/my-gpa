@@ -16,6 +16,8 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
     var semester: Semester!
     var semesterIndex: Int!
     var isEditModeEnabled = false
+    ///Determines whether the reloadData was called during a switch between edit/save states. Used for preventing repetition of animation of the EmptyCourseCell
+    var reloadTriggeredByEditAction = false
     
     
     override func viewDidLoad() {
@@ -49,15 +51,21 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         
         cell.deleteBtnAction = {
             self.semester.deleteCourse(at: indexPath.row)
-            self.collectionView.deleteItems(at: [indexPath])
-        }
 
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: [indexPath])
+            }, completion: { (finished) in
+                self.collectionView.reloadData()
+            })
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // Play a cool animation during the appearance of an EmptyCourseCell
-        if(cell as? EmptyCourseCell == nil) {return}
+        if(cell as? EmptyCourseCell == nil || !reloadTriggeredByEditAction) {return}
+        reloadTriggeredByEditAction = false
         
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         
@@ -104,6 +112,7 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
         {
             isEditModeEnabled = true
             newBtn = UIBarButtonItem(barButtonSystemItem: .save, target: editBtn.target, action: editBtn.action)
+            reloadTriggeredByEditAction = true
             collectionView.reloadData()
         }
         else
