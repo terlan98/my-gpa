@@ -64,7 +64,15 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Seme
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             DataService.instance.deleteSemester(index: indexPath.row)
-            tableView.reloadData()
+            
+            tableView.beginUpdates()
+            if(DataService.instance.getSemesters().count == 0)
+            {
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            }
+            tableView.deleteRows(at: [indexPath], with: .left)
+            tableView.endUpdates()
+            
         }
     }
     
