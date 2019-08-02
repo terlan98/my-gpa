@@ -15,11 +15,9 @@ class DataService
     
     private var semesters = [Semester]()
     
-//    private var semesters = [
-//        Semester(name: "Spring 2018", gpa: 3.87, courses: ["Calculus"]),
-//        Semester(name: "Fall 2019", gpa: 2.58, courses: ["History"]),
-//        Semester(name: "Summer 2018", gpa: 1.83, courses: ["Leadership"])
-//    ]//Dummy Semester data
+    ///List of possible grades to choose from
+    let gradeScheme1 = ["A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F", "P", "NP"]
+    let numericalGradeScheme1 = [4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 1.0, 0.7, 0.0]
     
     ///Returns an array containing Semesters added by the user
     func getSemesters() -> [Semester]

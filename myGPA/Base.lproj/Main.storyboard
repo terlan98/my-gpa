@@ -310,7 +310,7 @@
                                 <rect key="frame" x="16" y="90" width="343" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-j0-jC0">
-                                        <rect key="frame" x="103" y="151" width="232" height="141"/>
+                                        <rect key="frame" x="103" y="159" width="232" height="141"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="167"/>
                                         <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="0.3537564212" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -336,8 +336,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="wVC-j0-jC0" secondAttribute="bottom" constant="8" id="010-Oz-7WH"/>
-                                    <constraint firstItem="wVC-j0-jC0" firstAttribute="top" secondItem="xed-1F-hew" secondAttribute="bottom" constant="38" id="7mC-0u-rKd"/>
+                                    <constraint firstAttribute="bottom" secondItem="wVC-j0-jC0" secondAttribute="bottom" id="010-Oz-7WH"/>
+                                    <constraint firstItem="wVC-j0-jC0" firstAttribute="top" secondItem="xed-1F-hew" secondAttribute="bottom" constant="46" id="7mC-0u-rKd"/>
                                     <constraint firstAttribute="trailing" secondItem="xed-1F-hew" secondAttribute="trailing" constant="16" id="DCQ-ny-l5C"/>
                                     <constraint firstItem="xrh-a2-KQx" firstAttribute="top" secondItem="I0M-cv-ELu" secondAttribute="top" constant="8" id="HLW-Tu-G82"/>
                                     <constraint firstAttribute="trailing" secondItem="wVC-j0-jC0" secondAttribute="trailing" constant="8" id="KaS-SR-CHz"/>

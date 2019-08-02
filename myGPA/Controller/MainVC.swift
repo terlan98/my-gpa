@@ -66,7 +66,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Seme
             DataService.instance.deleteSemester(index: indexPath.row)
             
             tableView.beginUpdates()
-            if(DataService.instance.getSemesters().count == 0)
+            if(DataService.instance.getSemesters().count == 0)// insert 1 row for EmptyCell if user has deleted the last semester in array
             {
                 tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
             }

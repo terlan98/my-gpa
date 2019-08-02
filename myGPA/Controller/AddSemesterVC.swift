@@ -107,7 +107,7 @@ class AddSemesterVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         {
             if(delegate == nil) {return}
             
-            delegate?.userDidSaveSemester(semester: Semester(name: semesterNameTxtField.text!, gpa: 4.0, courses: coursesToSave))
+            delegate?.userDidSaveSemester(semester: Semester(name: semesterNameTxtField.text!, courses: coursesToSave))
             self.navigationController?.popViewController(animated: true)
         }
     }

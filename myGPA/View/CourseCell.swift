@@ -45,7 +45,7 @@ class CourseCell: UICollectionViewCell {
         if(!state) {return}
         
         let wiggleAnim = CABasicAnimation(keyPath: "transform.rotation.z")
-        wiggleAnim.duration = 0.15
+        wiggleAnim.duration = 0.2
         wiggleAnim.repeatDuration = .infinity
         wiggleAnim.autoreverses = true
         wiggleAnim.fromValue = NSNumber(value: -Double.pi * 0.01)

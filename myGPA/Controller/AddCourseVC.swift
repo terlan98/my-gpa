@@ -21,8 +21,6 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var gradePickerView: UIPickerView!
     @IBOutlet weak var creditTextField: UITextField!
     
-    ///List of possible grades to choose from
-    let grades = ["A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +36,13 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return grades.count
+        return DataService.instance.gradeScheme1.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.sizeToFit()
-        label.text = String(grades[row])
+        label.text = String(DataService.instance.gradeScheme1[row])
         label.textAlignment = .center
         return label
     }
@@ -82,7 +80,7 @@ class AddCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         else
         {
-            delegate?.userDidSaveCourse(course: Course(name: courseNameTextField.text!, grade: grades[gradePickerView.selectedRow(inComponent: 0)], credit: Double(creditTextField.text!)!))
+            delegate?.userDidSaveCourse(course: Course(name: courseNameTextField.text!, grade: DataService.instance.gradeScheme1[gradePickerView.selectedRow(inComponent: 0)], credit: Double(creditTextField.text!)!))
         }
         
         self.dismiss(animated: true, completion: nil)
