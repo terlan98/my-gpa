@@ -36,7 +36,14 @@ class SemesterCell: UITableViewCell {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         
-        semesterGpa.text = formatter.string(from: NSNumber(value: semester.gpa))
+        if let gpa = semester.gpa
+        {
+            semesterGpa.text = formatter.string(from: NSNumber(value: gpa))
+        }
+        else
+        {
+            semesterGpa.text = "0.0"
+        }
         
         colorizeBackground()
     }

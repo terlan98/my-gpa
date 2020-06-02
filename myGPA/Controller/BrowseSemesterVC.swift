@@ -16,9 +16,10 @@ class BrowseSemesterVC: UIViewController, UICollectionViewDelegate, UICollection
     var semester: Semester!
     var semesterIndex: Int!
     var isEditModeEnabled = false
-    ///Determines whether the reloadData was called during a switch between edit/save states. Used for preventing repetition of animation of the EmptyCourseCell
+    ///Determines whether the reloadData was called during a switch between edit/save states. Used for preventing repetition of the EmptyCourseCell animation
     var reloadTriggeredByEditAction = false
     
+    //TODO: Make sure that the Semester information is sent back when this VC is popped.
     
     override func viewDidLoad() {
         super.viewDidLoad()
